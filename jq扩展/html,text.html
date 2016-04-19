@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html与text的区别</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        //html 会获取元素的文本和节点
+        var htmlStr = $('#div1').html();
+        alert('htmlStr:' + htmlStr);
+        //活获取元素内所有节点的文本
+        //$('#div1').text('<h1>33</h1>');//设置值单纯设置文本,不会转化成节点
+        var textStr = $('#div1').text();
+        alert('textStr:' + textStr)
+        var textDivStr = $('div').text(); // 获取一个集合的所有的文本节点
+        alert(textDivStr);
+    })
+</script>
+<body>
+<div id="div1">点击我吧 <span>span</span></div>
+<div></div>
+<div></div>
+</body>
+</html>

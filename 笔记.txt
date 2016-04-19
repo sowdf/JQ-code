@@ -1,0 +1,8 @@
+$(document).find('ul li.box'); //find()
+
+empty();
+
+remove() //返回一个删除节点 连事件一起删除
+
+detach() //删除节点
+与remove的区别

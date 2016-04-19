@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        /* focusin focusout 和 focus blur的最大区别在与 前者支持事件冒泡 后者不支持 */
+       $('div').one('foucsin',function(){  //one 表示只能触发一次
+           alert('支持事件冒泡');
+       })
+    })
+</script>
+<style>
+    div { width:100px; height:100px; background:red; }
+</style>
+<body>
+<div id="div1"><input type="text"></div>
+</body>
+</html>

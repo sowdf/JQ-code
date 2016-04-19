@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        /* 接收两个回调参数 第一个参数鼠标移入 第二个鼠标移出
+         * 他调用的不是mouseover 和mouseour
+         * 而是调用的是mouseenter 和mouseleave 这两个与上面的区别
+          *
+          *
+          *
+          * */
+        $('#div1').hover(fnOver,fnOut);
+        function　fnOver(){
+            $(this).css('background','blue');
+            $(this).text('移出');
+        }
+        function　fnOut(){
+            $(this).css('background','red');
+            $(this).text('移入');
+        }
+    })
+</script>
+<style>
+    div { width:100px; height:100px; background:red; }
+</style>
+<body>
+<div id="div1">移入 <span>span</span></div>
+</body>
+</html>

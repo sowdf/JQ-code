@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remove与detach的区别</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        $('div').click(function(){
+            alert(1);
+        });
+        //var $div = $('div').remove();  //删除后连事件一起删除，返回值是元素
+        var $div = $('div').detach();  //删除还原后事件还在，返回值是元素本身和事件
+        $('body').append($div);
+    })
+</script>
+<body>
+    <div>点击我吧</div>
+</body>
+</html>

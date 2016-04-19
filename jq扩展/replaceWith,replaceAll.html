@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replaceWith与replaceAll的区别</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        /* replaceWith 是用某个元素替换自己 */
+        $('span').replaceWith($('div'));
+
+        /* replaceAll 是自己替换成某个元素 */
+        $('span').replaceAll($('div'));
+    })
+</script>
+<body>
+<div id="div1">点击我吧 <span>span</span></div>
+<span></span>
+</body>
+</html>
