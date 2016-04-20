@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取原生event对象</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        /*  jq里面的event 对象 并不是原生的的event事件 是经过JQ封装过的 */
+        $('#div1').on('touchstart',function(ev){
+            alert(ev.changedTouches); // underfind 必须转成原生的
+            alert(ev.originalEvent.changedTouches); /* originaEvent 转换成原生的event 对象 事件操作的时候 JQ给的Event事件可能获取不到 就转成原生的 */
+        })
+    })
+</script>
+<style>
+    div { width:100px; height:100px; background:red; }
+</style>
+<body>
+<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on的使用</title>
+</head>
+<style>
+    div { width:100px; height:100px; background:red; }
+</style>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    /* one delegate click() 在源码当中都会调用 on方法
+    * on 总共接收5个参数
+    * 其中一个是提供给one使用的
+    *有些时候必须把数据绑定在元素身上
+    *
+    *
+    * */
+    $(function(){
+       /* $('.div1').on('click',{name:'czh'},function(ev){
+            alert(ev.data.name);
+        });*/
+
+        /*  这种方式属于事件代理调用  就是delegate的调用  只用点击span 才能触发*/
+        $('.div1').on('click','span',{name:'czh'},function(ev){
+            alert(ev.data.name);
+        });
+        /* click  加在了div里面的span  建议用这个高级方法  */
+        /*$('.div1').delegate('span','click',function(){
+
+        });*/
+    });
+
+
+
+
+
+</script>
+<body>
+<div class="div1">
+    <span>点击我吧</span>
+</div>
+</body>
+</html>

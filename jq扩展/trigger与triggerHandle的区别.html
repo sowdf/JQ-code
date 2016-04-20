@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trigger与triggerHandler的区别</title>
+</head>
+<script src="jquery-2.0.3.js"></script>
+<script>
+    $(function(){
+        /*  trigger与triggerHandle的区别在于 trigger 会触发事件的默认行为 而triggerHandler不会 */
+        $('#inp1').on('focus',function(){
+            $(this).css('background','red');
+        });
+        /*$('#inp2').on('click',function(){
+            $('#inp1').trigger('focus'); //会触发获取光标的动作
+        });*/
+        $('#inp2').on('click',function(){
+            $('#inp1').triggerHandler('focus');//不会触发
+        });
+
+    })
+</script>
+<style>
+    div { width:100px; height:100px; background:red; }
+</style>
+<body>
+<input type="text" id="inp1"><input type="button" value="点击" id="inp2">
+</body>
+</html>

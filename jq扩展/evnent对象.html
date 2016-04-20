@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象</title>
+</head>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function(){
+        var $div = $('#div1');
+        var $span = $('span');
+        $div.on('click',function(){
+            alert(123);
+        });
+        $span.on('click',function(ev){
+            //ev.stopPropagation();  /*  stopPropagation 只会阻止父级的默认事件 */
+            ev.stopImmediatePropagation(); /*  会组织的自身 和和 父级的事件 要注意执行顺序 要执行的要放在前面 点击div还是可以弹得 */
+        });
+        $span.on('click',function(ev){
+            alert(456);
+        });
+
+        /* event事件 JQ中的which */
+        $div.on('mousedown',function(ev){  /* 滚轮事件不能用 click click只会触发左键，得用鼠标事件 来运行 */
+            alert(ev.which);
+        })
+
+
+    })
+</script>
+<style>
+    div { width:100px; height:100px; background:red; }
+</style>
+<body>
+<div id="div1"><span id="span1">点击我吧</span></div>
+</body>
+</html>
